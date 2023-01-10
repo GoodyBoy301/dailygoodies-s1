@@ -77,8 +77,8 @@ export default class e01 extends LongPage {
     let loaded = 0;
     return new Promise((resolve, reject) => {
       const textureLoader = new TextureLoader();
-      preloadables.textures["e01"].forEach((src, index) => {
-        textureLoader.load(src, (texture) => {
+      this.elements.images.forEach((element, index) => {
+        textureLoader.load(element.getAttribute("src"), (texture) => {
           const map = texture;
           map.encoding = sRGBEncoding;
           Canvas.textures[index] = texture;
