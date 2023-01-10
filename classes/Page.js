@@ -5,7 +5,7 @@ export default class Page {
     this.id = id;
     this.selector = element;
     this.children = { ...elements };
-    this.createWebGL();
+    // this.createWebGL();
   }
 
   /** Life Cycle */
