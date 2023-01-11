@@ -1,6 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@studio-freight/lenis': ^0.2.28
+  dat.gui: ^0.7.9
   gsap: ^3.11.4
   include-media: ^1.4.10
   normalize-wheel: ^1.0.1
@@ -11,6 +13,8 @@ specifiers:
   vite: ^4.0.0
 
 dependencies:
+  '@studio-freight/lenis': 0.2.28
+  dat.gui: 0.7.9
   gsap: 3.11.4
   include-media: 1.4.10
   normalize-wheel: 1.0.1
@@ -222,6 +226,13 @@ packages:
     dev: true
     optional: true
 
+  /@studio-freight/lenis/0.2.28:
+    resolution: {integrity: sha512-obxWf3ZNtnLg9Rd2WPgkzq36N2NEmiwvdlNXlHIrrjCGltZp4+NtIQmXsF9/XtsJEhQ4Gd4u90zALRDgsr5W/g==}
+    dependencies:
+      tiny-emitter: 2.1.0
+      virtual-scroll: 2.2.1
+    dev: false
+
   /anymatch/3.1.3:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
     engines: {node: '>= 8'}
@@ -255,6 +266,10 @@ packages:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.2
+    dev: false
+
+  /dat.gui/0.7.9:
+    resolution: {integrity: sha512-sCNc1OHobc+Erc1HqiswYgHdVNpSJUlk/Hz8vzOCsER7rl+oF/4+v8GXFUyCgtXpoCX6+bnmg07DedLvBLwYKQ==}
     dev: false
 
   /esbuild/0.16.15:
@@ -453,11 +468,21 @@ packages:
     resolution: {integrity: sha512-LPTOslYQXFkmvceQjFTNnVVli2LaVF6C99Pv34fJypp8NbQLbTlu3KinZ0zURghS5zEehK+VQyvWuPZ/Sm8fzw==}
     dev: false
 
+  /tiny-emitter/2.1.0:
+    resolution: {integrity: sha512-NB6Dk1A9xgQPMoGqC5CVXn123gWyte215ONT5Pp5a0yt4nlEoO1ZWeCwpncaekPHXO60i47ihFnZPiRPjRMq4Q==}
+    dev: false
+
   /to-regex-range/5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
     dependencies:
       is-number: 7.0.0
+    dev: false
+
+  /virtual-scroll/2.2.1:
+    resolution: {integrity: sha512-RvjcLxluh7B/6GPzLgQ9d0NYG4yqEguTc3MU7AvxyPVltuo2Cq5RokTL9RKUaZCMJ64in2hus0d03gTtoHp55g==}
+    dependencies:
+      tiny-emitter: 2.1.0
     dev: false
 
   /vite/4.0.4_sass@1.57.1:
