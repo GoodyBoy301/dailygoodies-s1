@@ -1,61 +1,128 @@
 .wrapper {
   position: relative;
+  background: #010300;
+  color: #ffffff;
+  letter-spacing: 0.02rem;
+  font-family: "PP Neue Montreal", sans-serif;
+  font-weight: 450;
+  font-size: 1.6rem;
+  display: grid;
+  align-items: flex-end;
+  min-height: 100vh;
+
   @media (max-width: 768px) {
     display: none;
   }
 }
-.gallery {
-  // background: #ffffff;
-  height: 10dvh;
-  height: 100vh;
-  width: 100vw;
+.header {
   position: absolute;
   top: 0;
+  width: calc(100% - 8rem);
   display: flex;
-  pointer-events: none;
-  &:first-of-type {
-    z-index: 2;
+  justify-content: space-between;
+  padding: 4rem;
+  line-height: 150%;
+}
+.header__home {
+}
+.header__home__link {
+}
+
+.nav {
+  width: 43.1rem;
+}
+.nav__wrapper {
+  display: flex;
+  gap: 3.2rem;
+}
+.nav__list {
+}
+.nav__list__destination {
+}
+.models {
+  margin: 0 auto;
+  display: grid;
+  align-items: center;
+}
+.models__header {
+  text-align: center;
+}
+.models__header__text {
+  font-size: 4rem;
+  line-height: 100%;
+}
+.models__header__desc {
+  width: 45.8rem;
+  margin: 1.6rem auto;
+}
+.models__grid {
+  margin: 4rem 0 8.1rem;
+  display: grid;
+  gap: 2.4rem;
+}
+.models__row {
+  display: flex;
+  gap: 4rem;
+  margin: 0 auto;
+  justify-content: space-between;
+  &:nth-of-type(1) {
+    width: 117.3rem;
+  }
+  &:nth-of-type(2) {
+    width: 133.6rem;
+  }
+  &:nth-of-type(3) {
+    width: 135.5rem;
   }
 }
-.gallery__media {
-  width: 43.7rem;
-  margin: 4rem 0 0 4rem;
-  max-height: 77.7rem;
-}
-.gallery__image {
-  opacity: 0;
-  object-fit: fill;
-}
-.gallery__info {
-  display: none;
-  margin-left: calc(97.7rem - 43.7rem - 4rem);
-  margin-top: 13.9rem;
-  max-width: 39rem;
-}
-.gallery__nav {
-  font-size: 1.2rem;
-  line-height: 1.5rem;
-  font-weight: 400;
-  color: #616161;
+.models__item {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: baseline;
+  text-transform: uppercase;
+  position: relative;
   &:hover {
-    cursor: pointer;
+    z-index: 1;
+    .model__media {
+      opacity: 1;
+    }
   }
 }
-.gallery__nav__item {
-  list-style-type: decimal;
-  list-style-position: inside;
-}
-.gallery__desc {
-  margin-top: calc(65.1rem - 13.9rem - 4.5rem);
-  display: flex;
-  align-items: flex-end;
-  font-size: 1.4rem;
-  line-height: 1.7rem;
+.model__name {
+  font-family: "Playfair Display", serif;
+  // font-size: 7.2rem;
+  font-size: 7rem;
+  line-height: 110%;
   font-weight: 400;
+  font-feature-settings: "pnum" on, "lnum" on;
+  position: relative;
+  z-index: 1;
+}
+.model__country {
+  vertical-align: sub;
+  display: inline-block;
+  padding-left: 1.6rem;
+  position: relative;
+  z-index: 1;
+}
+.model__media {
+  opacity: 0;
+  position: absolute;
+  bottom: -3.2rem;
+  width: 24rem;
+  height: 32rem;
+  // clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+  margin: 0 3rem;
+  pointer-events: none;
+}
+
+img {
+  // display: none;
 }
 
 canvas {
-  pointer-events: unset;
+  // pointer-events: unset;
   z-index: unset;
 }
 .dg {

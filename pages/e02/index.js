@@ -16,7 +16,7 @@ import {
   DoubleSide,
 } from "three";
 
-export default class e01 extends LongPage {
+export default class e02 extends LongPage {
   constructor() {
     super({
       element: ".home",
@@ -24,7 +24,7 @@ export default class e01 extends LongPage {
       elements: {
         galleries: ".gallery",
         infos: ".gallery__info",
-        images: ".gallery__image",
+        images: ".model__image",
         switches: ".gallery__nav__item",
       },
     });
@@ -36,6 +36,8 @@ export default class e01 extends LongPage {
     this.mouseClip = new Vector2(0, 0);
 
     super.create();
+    this.rotateImages();
+    return;
     this.reCalculate({ scroll: {} });
     this.gui = new dat.GUI();
 
@@ -52,6 +54,7 @@ export default class e01 extends LongPage {
   }
 
   reCalculate() {
+    return;
     super.reCalculate;
     this.isMobile = innerWidth < 768;
     this.mousePosition = { x: 0, y: 0 };
@@ -79,6 +82,12 @@ export default class e01 extends LongPage {
     super.update();
     if (!this.material) return;
     this.material.uniforms.uMouse.value = this.mousePosition;
+  }
+
+  rotateImages() {
+    this.elements.images.forEach((element) => {
+      element.style.transform = `rotateZ(${element.attributes["data-rotation"].value})`;
+    });
   }
 
   /** WebGL */
@@ -170,6 +179,7 @@ export default class e01 extends LongPage {
   }
 
   addEventListeners() {
+    return;
     super.addEventListeners();
     this.elements.images.forEach((image) => {
       image.onmouseenter = () => {

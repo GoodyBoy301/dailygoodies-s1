@@ -33,6 +33,10 @@ select,
 a {
   -webkit-tap-highlight-color: transparent;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 h1 {
   opacity: 0;
