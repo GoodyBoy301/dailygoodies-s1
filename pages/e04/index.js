@@ -50,7 +50,7 @@ export default class e04 extends LongPage {
     // this.gui = new dat.GUI();
 
     this.rotateImages();
-    this.controls = new OrbitControls(Canvas.camera, Canvas.canvas);
+    // this.controls = new OrbitControls(Canvas.camera, Canvas.canvas);
 
     // this.gui
     //   .add(this.geometry, "curveSegments", 0.0, 32, 0.1)
