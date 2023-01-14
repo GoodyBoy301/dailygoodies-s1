@@ -70,8 +70,14 @@
     z-index: 5;
     position: fixed;
     padding-left: 4.3rem;
+    &:hover {
+      .models__item {
+        opacity: 0;
+      }
+    }
     .models__item {
-      opacity: 0;
+      opacity: 1;
+      transition: opacity 0.2s;
     }
     .model__image {
       // opacity: 1 !important;

@@ -28,6 +28,7 @@ export default class e04 extends LongPage {
       element: ".home",
       id: "e01",
       elements: {
+        grid: ".models__grid",
         models: "[data-fixed] .models__item",
         images: "[data-fixed] .model__image",
       },
@@ -46,7 +47,7 @@ export default class e04 extends LongPage {
     this.placeMesh();
 
     this.reCalculate({ scroll: {} });
-    this.gui = new dat.GUI();
+    // this.gui = new dat.GUI();
 
     this.rotateImages();
     this.controls = new OrbitControls(Canvas.camera, Canvas.canvas);
@@ -62,8 +63,11 @@ export default class e04 extends LongPage {
   update() {
     this.controls?.update();
     super.update();
-    if (!this.material) return;
-    this.material.uniforms.uMouse.value = this.mousePosition;
+    this.gallery?.forEach((gallery, index) => {
+      if (!gallery.fadeOut) return;
+      if (index === this.hovered) gallery.fadeIn();
+      else gallery.fadeOut();
+    });
   }
 
   rotateImages() {
@@ -112,17 +116,16 @@ export default class e04 extends LongPage {
     super.addEventListeners();
     this.elements.models.forEach((model, index) => {
       model.onmouseenter = () => {
-        this.gallery[index].animation?.play();
+        this.gallery[index].enterAnimation?.restart();
         this.elements.models[index].style.opacity = "1";
+        this.hovered = index;
       };
       model.onmouseleave = () => {
-        this.gallery[index].animation?.reverse();
-        this.elements.models[index].style.opacity = "0";
+        this.gallery[index].leaveAnimation?.restart();
+        this.elements.models[index].style.opacity = "";
       };
     });
-
-    this.elements.models.forEach((model) => {
-      // model.onmouseleave = () => console.log(1);
-    });
+    this.elements.grid[1].onmouseenter = () => Canvas.scene.add(this.mesh);
+    this.elements.grid[1].onmouseleave = () => Canvas.scene.remove(this.mesh);
   }
 }

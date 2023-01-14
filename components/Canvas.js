@@ -1,4 +1,5 @@
 import {
+  Cache,
   CineonToneMapping,
   PerspectiveCamera,
   Scene,
@@ -10,6 +11,7 @@ import time from "/utils/time";
 export default class Canvas {
   constructor() {
     this.create();
+    Cache.enabled = true;
     window.Canvas = this;
   }
 

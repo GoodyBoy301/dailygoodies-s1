@@ -1,6 +1,8 @@
 precision highp float;
 
 uniform sampler2D uTexture;
+uniform float uOpacity;
+uniform float uTimeline;
 uniform vec2 uMouse;
 uniform vec4 uClip;
 
@@ -58,8 +60,18 @@ void main(){
   uv+=0.5;
   // uv*=2.0;
 
+    float r = uTimeline;
+
+
   vec4 texture = texture2D(uTexture, uv);
   
+  if (uv.x < r){
+    texture.x =0.3;
+    texture.y =0.3;
+    texture.z =0.3;
+  }else if (uv.x < (3.0 * r / 2.0)){
+    texture -= 0.05;
+  }
 
-  gl_FragColor = texture;
+  gl_FragColor = vec4(texture.xyz, uOpacity);
 }
