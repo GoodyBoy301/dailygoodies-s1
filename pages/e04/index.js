@@ -31,6 +31,7 @@ export default class e04 extends LongPage {
         grid: ".models__grid",
         models: "[data-fixed] .models__item",
         images: "[data-fixed] .model__image",
+        texts: ".models__item",
       },
     });
   }
@@ -45,6 +46,8 @@ export default class e04 extends LongPage {
     this.createMesh();
     this.createGallery();
     this.placeMesh();
+
+    this.animateText();
 
     this.reCalculate({ scroll: {} });
     // this.gui = new dat.GUI();
@@ -110,6 +113,49 @@ export default class e04 extends LongPage {
     this.gallery?.forEach((gallery) => gallery.placeMesh());
 
     !this.isMobile && Canvas.scene.add(this.mesh);
+  }
+
+  animateText() {
+    const texts = Array.from(this.elements.texts);
+    gsap.fromTo(
+      texts.slice(0, 11),
+      {
+        y: "100rem",
+      },
+      {
+        y: 0,
+        duration: 0.75,
+        ease: "power3.out",
+        stagger: 0.02,
+        delay: 0.5,
+      }
+    );
+    gsap.fromTo(
+      texts.slice(-11),
+      {
+        y: "100rem",
+      },
+      {
+        y: 0,
+        duration: 0.75,
+        ease: "power3.out",
+        stagger: 0.02,
+        delay: 0.5,
+      }
+    );
+    gsap.fromTo(
+      ".models__header *",
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 0.75,
+        ease: "power3.out",
+        stagger: -0.05,
+        delay: 1,
+      }
+    );
   }
 
   addEventListeners() {

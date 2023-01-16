@@ -117,7 +117,7 @@ export default class Image {
           duration: 0.1,
         },
         {
-          value: Math.PI * 0.05,
+          value: Math.PI * 0.025,
           duration: 0.5,
           delay: 0.5,
         }

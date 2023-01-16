@@ -13,6 +13,7 @@ body {
   user-select: none;
   -webkit-user-drag: none;
   overflow: hidden;
+  display: unset !important;
 }
 
 ::-webkit-scrollbar {
