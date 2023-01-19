@@ -32,6 +32,7 @@ export default class e02 extends LongPage {
 
   /** Life Cycle */
   async create() {
+    return;
     this.mousePosition = new Vector2(0, 0);
     this.mouseClip = new Vector2(0, 0);
 

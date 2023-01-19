@@ -49,7 +49,7 @@ export default class e04 extends LongPage {
 
     this.animateText();
 
-    this.reCalculate({ scroll: {} });
+    // this.reCalculate({ scroll: {} });
     // this.gui = new dat.GUI();
 
     this.rotateImages();
@@ -156,6 +156,7 @@ export default class e04 extends LongPage {
         delay: 1,
       }
     );
+    gsap.delayedCall(2, this.reCalculate.bind(this));
   }
 
   addEventListeners() {
