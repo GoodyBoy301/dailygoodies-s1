@@ -10,12 +10,20 @@
   align-items: flex-end;
   min-height: 100vh;
   place-content: center;
-
+}
+html {
   @media (max-width: 768px) {
-    display: none;
+    font-size: calc(100vw / 640 * 10);
   }
 }
-
+.null {
+  @media (max-width: 768px) {
+    transform: rotateZ(90deg);
+    position: fixed;
+    top: 0;
+    right: -17.5%;
+  }
+}
 section {
   height: 3rem;
   width: 60rem;
@@ -23,11 +31,19 @@ section {
   left: 48.5rem;
   top: 40.5rem;
   border-radius: 5rem;
-  left: 34rem;
+  left: 29rem;
   width: 75rem;
-  top: 37rem;
+  top: 33rem;
   height: 10rem;
+  padding: 5rem;
+  &::after {
+    transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  // @media (max-width: 768px) {
+  //   transform: rotateZ(90deg);
+  // }
   &:hover {
+    cursor: pointer;
     .track {
       left: 31rem;
       width: 81rem;
@@ -39,24 +55,65 @@ section {
       color: #010300;
     }
   }
+  &.unstarted {
+    left: 34rem;
+    top: 38rem;
+    padding: 0rem;
+    background: #1d1d1d;
+    cursor: drag;
+    &::after {
+      content: "Play \25BA";
+      color: white;
+      font-size: 7rem;
+      line-height: 10rem;
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: center;
+      opacity: 1;
+    }
+    .track {
+      left: 31rem;
+      width: 81rem;
+      top: 37rem;
+      height: 10rem;
+      opacity: 0;
+    }
+    .bar {
+      opacity: 0;
+    }
+    .volume {
+      left: 33rem;
+      color: #010300;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
 }
 .track {
   height: 3rem;
   width: 60rem;
-  background: white;
   position: fixed;
   left: 48.5rem;
   top: 40.5rem;
-  border-radius: 5rem;
+  border-radius: 3rem;
   transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+  background: #1d1d1d;
 }
 .bar {
+  background: white;
+  pointer-events: none;
+  width: 80%;
+  height: inherit;
+  border-radius: 3rem;
 }
 .volume {
   position: fixed;
   left: 36rem;
   top: 37rem;
   transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+  pointer-events: none;
 
   svg {
     display: grid;
@@ -64,6 +121,7 @@ section {
     width: 10rem;
     height: 10rem;
     position: absolute;
+    transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   }
 }
 .up {

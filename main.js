@@ -20,6 +20,7 @@ class App extends Framework {
       e04: new e04(),
     };
     this.page = this.pages[this.template];
+    document.body.style.display = "";
   }
 
   update() {

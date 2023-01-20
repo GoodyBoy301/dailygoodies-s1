@@ -31,7 +31,8 @@ input,
 textarea,
 button,
 select,
-a {
+a,
+* {
   -webkit-tap-highlight-color: transparent;
 }
 a {
